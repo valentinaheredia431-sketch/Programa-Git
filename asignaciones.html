@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignaciones - Soluciones Tech</title>
+    <link rel="stylesheet" href="css/styles-global.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo Soluciones Tech">
+        </div>
+        <div class="user-profile">
+            <span>Bienvenido, Administrador</span>
+            <a href="index.html" class="btn-danger">Cerrar Sesión</a>
+        </div>
+    </header>
+
+    <aside class="sidebar-navigation">
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="dashboard.html">Inicio (Dashboard)</a></li>
+                <li><a href="gestion-equipos.html">Gestión de Equipos</a></li>
+                <li><a href="asignaciones.html">Asignaciones</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+                <li><a href="usuarios.html">Usuarios</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="content-layout">
+        <h1>Asignación y Préstamos de Equipos</h1>
+
+        <section class="card-container">
+            <h3>Nueva Asignación</h3>
+            <form class="form-grid">
+                <label for="equipo">Seleccionar Equipo:</label>
+                <select id="equipo" class="input-field">
+                    <option value="1">EQ-1002 (Portátil Dell)</option>
+                    <option value="2">EQ-1005 (Monitor HP)</option>
+                </select>
+
+                <label for="usuario">Seleccionar Usuario Responsable:</label>
+                <select id="usuario" class="input-field">
+                    <option value="1">Carlos Gómez (Técnico)</option>
+                    <option value="2">Ana Rodríguez (Soporte)</option>
+                </select>
+
+                <button type="submit" class="btn-primary">Registrar Préstamo</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer-technical">
+        <p>&copy; 2026 Soluciones Tech.</p>
+    </footer>
+
+</body>
+</html>

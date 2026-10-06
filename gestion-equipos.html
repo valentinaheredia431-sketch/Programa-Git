@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Equipos - Soluciones Tech</title>
+    <link rel="stylesheet" href="css/styles-global.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo Soluciones Tech">
+        </div>
+        <div class="user-profile">
+            <span>Bienvenido, Administrador</span>
+            <a href="index.html" class="btn-danger">Cerrar Sesión</a>
+        </div>
+    </header>
+
+    <aside class="sidebar-navigation">
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="dashboard.html">Inicio (Dashboard)</a></li>
+                <li><a href="gestion-equipos.html">Gestión de Equipos</a></li>
+                <li><a href="asignaciones.html">Asignaciones</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+                <li><a href="usuarios.html">Usuarios</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="content-layout">
+        <h1>Gestión de Equipos e Inventario</h1>
+        
+        <section class="card-container">
+            <h3>Registrar Nuevo Equipo</h3>
+            <form class="form-grid">
+                <label for="serial">Número de Serial:</label>
+                <input type="text" id="serial" class="input-field" placeholder="EJ: EQ-9982" required>
+                
+                <label for="tipo">Tipo de Hardware:</label>
+                <input type="text" id="tipo" class="input-field" placeholder="Portátil / Monitor / Servidor" required>
+
+                <button type="submit" class="btn-primary">Guardar Equipo</button>
+            </form>
+        </section>
+
+        <section class="card-container">
+            <h3>Inventario de Equipos</h3>
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th>Serial</th>
+                        <th>Tipo</th>
+                        <th>Estado</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>EQ-1002</td>
+                        <td>Portátil Dell</td>
+                        <td>Disponible</td>
+                        <td><button class="btn-danger">Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="footer-technical">
+        <p>&copy; 2026 Soluciones Tech.</p>
+    </footer>
+
+</body>
+</html>

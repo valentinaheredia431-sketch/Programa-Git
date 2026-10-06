@@ -1,0 +1,227 @@
+/* ==========================================
+   VARIABLES GLOBALES (Paleta de colores Prototipo)
+   ========================================== */
+:root {
+    --primary-green: #10b981;       /* Verde esmeralda principal */
+    --primary-green-hover: #059669; /* Verde más oscuro para hover */
+    --bg-light: #f8fafc;            /* Fondo gris claro de la pantalla */
+    --card-bg: #ffffff;             /* Fondo blanco de tarjetas */
+    --text-dark: #1e293b;           /* Texto principal */
+    --text-muted: #64748b;          /* Texto secundario / gris */
+    --border-color: #e2e8f0;        /* Bordes suavecitos */
+    --danger-red: #ef4444;          /* Rojo para salir / eliminar */
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --radius: 12px;                 /* Bordes redondeados del prototipo */
+}
+
+/* Base global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+/* ==========================================
+   ESTILOS PANTALLA DE LOGIN (index.html)
+   ========================================== */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-card {
+    background: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-soft);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-card .logo img {
+    max-width: 180px;
+    margin-bottom: 20px;
+}
+
+.login-card h2 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.form-login label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    outline: none;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+}
+
+.input-field:focus {
+    border-color: var(--primary-green);
+}
+
+.btn-primary {
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-green-hover);
+}
+
+/* ==========================================
+   LAYOUT PANEL ADMINISTRATIVO (Dashboard, etc.)
+   ========================================== */
+body:has(.top-bar) {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 70px 1fr 50px;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main"
+        "sidebar footer";
+}
+
+.top-bar {
+    grid-area: header;
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.sidebar-navigation {
+    grid-area: sidebar;
+    background: var(--card-bg);
+    border-right: 1px solid var(--border-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: var(--radius);
+    display: block;
+    transition: all 0.2s;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    background-color: #ecfdf5;
+    color: var(--primary-green);
+}
+
+.content-layout {
+    grid-area: main;
+    padding: 30px;
+}
+
+.card-container {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 20px;
+}
+
+/* Tablas */
+.table-custom {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.table-custom th, .table-custom td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-custom th {
+    background-color: var(--bg-light);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.btn-danger {
+    background-color: transparent;
+    color: var(--danger-red);
+    border: 1px solid var(--danger-red);
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.footer-technical {
+    grid-area: footer;
+    background: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    body:has(.top-bar) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas: 
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+}
